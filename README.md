@@ -23,4 +23,38 @@ The Book Management System will be a web application that allows users to manage
 - **MySQL or PostgreSQL:** Choose a relational database to store user data, book information, and other relevant data.
 - **Frontend Framework:** You can use a frontend framework like Vue.js or React.js to build the user interface for interacting with the GraphQL API.
 
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/BaseMax/BookingLaravelGraphQL.git
+   ```
+
+2. Install dependencies:
+
+  ```bash
+  composer install
+  npm install # or yarn install
+  ```
+
+3. Configure the .env file with your database settings and other configurations.
+
+4. Run migrations and seeders:
+
+  ```bash
+  php artisan migrate --seed
+  ```
+
+5. Start the development server:
+
+  ```bash
+  php artisan serve
+  ```
+
+6. Access the application in your browser at `http://localhost:8000`.
+
+## GraphQL Queries and Mutations
+
+Below are some example GraphQL queries and mutations you can use to interact with the API. You can find more in the documentation.
+
 Copyright 2023, Max Base
