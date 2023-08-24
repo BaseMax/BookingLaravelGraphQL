@@ -37,7 +37,7 @@ The Book Management System will be a web application that allows users to manage
   npm install # or yarn install
   ```
 
-3. Configure the .env file with your database settings and other configurations.
+3. Configure the `.env` file with your database settings and other configurations.
 
 4. Run migrations and seeders:
 
