@@ -57,4 +57,6 @@ The Book Management System will be a web application that allows users to manage
 
 Below are some example GraphQL queries and mutations you can use to interact with the API. You can find more in the documentation.
 
+
+
 Copyright 2023, Max Base
