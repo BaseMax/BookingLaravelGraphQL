@@ -57,6 +57,59 @@ The Book Management System will be a web application that allows users to manage
 
 Below are some example GraphQL queries and mutations you can use to interact with the API. You can find more in the documentation.
 
-
+| Action                 | Query / Mutation                                                 |
+|------------------------|------------------------------------------------------------------|
+| Get all books          | `query { books { id title author category } }`                   |
+| Get book by ID         | `query { book(id: 1) { title author category } }`                |
+| Add a new book         | `mutation { addBook(input: { title author category }) { id } }`   |
+| Update a book          | `mutation { updateBook(id: 1, input: { title }) { id title } }`   |
+| Delete a book          | `mutation { deleteBook(id: 1) }`                                 |
+| Get all categories     | `query { categories { id name } }`                              |
+| Add a new category     | `mutation { addCategory(input: { name }) { id name } }`          |
+| Update a category      | `mutation { updateCategory(id: 1, input: { name }) { id name } }`|
+| Delete a category      | `mutation { deleteCategory(id: 1) }`                            |
+| Get user profile       | `query { userProfile { username email } }`                      |
+| Update user profile    | `mutation { updateUserProfile(input: { email }) { username } }`  |
+| Get reading progress   | `query { readingProgress(bookId: 1) }`                          |
+| Update reading progress| `mutation { updateReadingProgress(bookId: 1, status: "Read") }`  |
+| Get book reviews       | `query { book(id: 1) { reviews { id content rating } } }`        |
+| Add a book review      | `mutation { addReview(bookId: 1, input: { content rating }) { id } }` |
+| Update a review        | `mutation { updateReview(id: 1, input: { content }) { id content } }` |
+| Delete a review        | `mutation { deleteReview(id: 1) }`                               |
+| Get notifications      | `query { notifications { id message type } }`                   |
+| Mark notification as read | `mutation { markNotificationRead(id: 1) }`                    |
+| Search books by title  | `query { searchBooks(title: "Keyword") { id title } }`           |
+| Filter books by category | `query { filterBooksByCategory(categoryId: 1) { id title } }` |
+| Get top-rated books    | `query { topRatedBooks { id title rating } }`                    |
+| Get book recommendations| `query { bookRecommendations { id title } }`                    |
+| Get author details     | `query { author(id: 1) { name bio } }`                          |
+| Add a new author       | `mutation { addAuthor(input: { name bio }) { id name } }`        |
+| Update an author       | `mutation { updateAuthor(id: 1, input: { name }) { id name } }`  |
+| Delete an author       | `mutation { deleteAuthor(id: 1) }`                               |
+| Get user reading list  | `query { userReadingList { id title author } }`                  |
+| Add book to reading list | `mutation { addToReadingList(bookId: 1) }`                     |
+| Remove book from reading list | `mutation { removeFromReadingList(bookId: 1) }`             |
+| Get book details       | `query { bookDetails(id: 1) { title author category reviews { content rating } } }` |
+| Get unread notifications | `query { unreadNotifications { id message type } }`             |
+| Add book to favorites  | `mutation { addToFavorites(bookId: 1) }`                         |
+| Remove book from favorites | `mutation { removeFromFavorites(bookId: 1) }`                 |
+| Get user favorite books| `query { userFavoriteBooks { id title author } }`                |
+| Mark book as read      | `mutation { markBookAsRead(bookId: 1) }`                         |
+| Get recently added books | `query { recentlyAddedBooks { id title author } }`             |
+| Rate a book            | `mutation { rateBook(bookId: 1, rating: 5) }`                   |
+| Get average rating for a book | `query { book(id: 1) { averageRating } }`                  |
+| Get user unread count  | `query { unreadNotificationCount }`                              |
+| Get total book count   | `query { totalBookCount }`                                       |
+| Get total user count   | `query { totalUserCount }`                                       |
+| Get book count by category | `query { bookCountByCategory(categoryId: 1) }`               |
+| Get user notifications by type | `query { userNotificationsByType(type: "Recommendation") { id message } }` |
+| Get user favorite authors | `query { userFavoriteAuthors { id name } }`                   |
+| Get user reviews       | `query { userReviews { id content book { title } } }`            |
+| Get user reading progress | `query { userReadingProgress { book { title } status } }`       |
+| Get user reading history | `query { userReadingHistory { book { title } status } }`         |
+| Add book to reading history | `mutation { addToReadingHistory(bookId: 1) }`                |
+| Get user favorite categories | `query { userFavoriteCategories { id name } }`               |
+| Get user favorite books by category | `query { userFavoriteBooksByCategory(categoryId: 1) { id title } }` |
+| Get user favorite authors by category | `query { userFavoriteAuthorsByCategory(categoryId: 1) { id name } }` |
 
 Copyright 2023, Max Base
