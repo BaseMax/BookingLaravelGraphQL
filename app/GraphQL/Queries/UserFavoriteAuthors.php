@@ -14,7 +14,7 @@ final class UserFavoriteAuthors
      */
     public function __invoke($_, array $args)
     {
-        $bookIds = DB::table('favorites')->select(['book_id'])->where('user_id', '=', Auth::id());
+        $bookIds = DB::table('favorites')->select(['book_id'])->where('user_id', '=', Auth::id())->get();
         $authorIds = DB::table('books')->select(['author_id'])->whereIn('id', $bookIds)->get();
         return Author::whereIn('id', $authorIds)->get();
     }

@@ -14,7 +14,7 @@ final class UserFavoriteCategories
      */
     public function __invoke($_, array $args)
     {
-        $bookIds = DB::table('favorites')->select(['book_id'])->where('user_id', '=', Auth::id());
+        $bookIds = DB::table('favorites')->select(['book_id'])->where('user_id', '=', Auth::id())->get();
         $categoryIds = DB::table('books')->select(['category_id'])->whereIn('id', $bookIds)->get();
         return Category::whereIn('id', $categoryIds)->get();
     }
