@@ -81,7 +81,6 @@ Below are some example GraphQL queries and mutations you can use to interact wit
 | Search books by title  | `query { searchBooks(title: "Keyword") { id title } }`           |
 | Filter books by category | `query { filterBooksByCategory(categoryId: 1) { id title } }` |
 | Get top-rated books    | `query { topRatedBooks { id title rating } }`                    |
-| Get book recommendations| `query { bookRecommendations { id title } }`                    |
 | Get author details     | `query { author(id: 1) { name bio } }`                          |
 | Add a new author       | `mutation { addAuthor(input: { name bio }) { id name } }`        |
 | Update an author       | `mutation { updateAuthor(id: 1, input: { name }) { id name } }`  |
@@ -106,8 +105,6 @@ Below are some example GraphQL queries and mutations you can use to interact wit
 | Get user favorite authors | `query { userFavoriteAuthors { id name } }`                   |
 | Get user reviews       | `query { userReviews { id content book { title } } }`            |
 | Get user reading progress | `query { userReadingProgress { book { title } status } }`       |
-| Get user reading history | `query { userReadingHistory { book { title } status } }`         |
-| Add book to reading history | `mutation { addToReadingHistory(bookId: 1) }`                |
 | Get user favorite categories | `query { userFavoriteCategories { id name } }`               |
 | Get user favorite books by category | `query { userFavoriteBooksByCategory(categoryId: 1) { id title } }` |
 | Get user favorite authors by category | `query { userFavoriteAuthorsByCategory(categoryId: 1) { id name } }` |
