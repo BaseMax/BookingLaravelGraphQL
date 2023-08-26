@@ -1,0 +1,12 @@
+extend type Query {
+    userFavoriteBooks: [Book!]! @guard
+    userFavoriteAuthors: [Author!]! @guard
+    userFavoriteCategories: [Category!]! @guard
+    userFavoriteBooksByCategory(categoryId: ID!): [Book!]! @guard
+    userFavoriteAuthorsByCategory(categoryId: ID!): [Author!]! @guard
+}
+
+extend type Mutation {
+    addToFavorites(bookId: ID!): Favorite @guard
+    removeFromFavorites(bookId: ID!): Boolean @guard
+}

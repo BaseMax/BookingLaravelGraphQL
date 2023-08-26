@@ -1,0 +1,10 @@
+extend type Query {
+    userProfile: User! @auth @guard
+    totalUserCount: Int! @count(model: "User") @guard
+}
+
+extend type Mutation {
+    login(email: String!, password: String!): String
+    register(username: String!, email: String!, password: String!): String
+    updateUserProfile(email: String, username: String): User! @guard
+}

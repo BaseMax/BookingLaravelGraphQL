@@ -1,0 +1,10 @@
+extend type Query {
+    notifications: [Notification!]! @guard
+    unreadNotifications: [Notification!]! @guard
+    unreadNotificationCount: Int! @guard
+    userNotificationsByType(type: String!): [Notification!]! @guard
+}
+
+extend type Mutation {
+    markNotificationRead(id: ID!): Notification @guard
+}

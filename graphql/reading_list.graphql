@@ -1,0 +1,8 @@
+extend type Query {
+    userReadingList: [ReadingList!]! @guard
+}
+
+extend type Mutation {
+    addToReadingList(bookId: ID!): ReadingList @guard
+    removeFromReadingList(bookId: ID!): Boolean @guard
+}

@@ -1,0 +1,9 @@
+extend type Query {
+    categories: [Category!]! @paginate(defaultCount: 10) @guard
+}
+
+extend type Mutation {
+    addCategory(name: String!): Category! @create
+    updateCategory(id: ID! @whereKey, name: String): Category @update @guard
+    deleteCategory(id: ID! @whereKey): Category @delete @guard
+}

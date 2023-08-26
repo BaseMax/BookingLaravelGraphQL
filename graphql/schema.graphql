@@ -1,0 +1,10 @@
+#import types.graphql
+#import user.graphql
+#import category.graphql
+#import author.graphql
+#import book.graphql
+#import reading_progress.graphql
+#import review.graphql
+#import notification.graphql
+#import reading_list.graphql
+#import favorite.graphql

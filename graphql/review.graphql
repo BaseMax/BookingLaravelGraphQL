@@ -1,0 +1,10 @@
+extend type Query {
+    userReviews: [Review!]! @guard
+}
+
+extend type Mutation {
+    addReview(bookId: ID!, content: String!, rating: Float!): Review @guard
+    updateReview(id: ID!, content: String, rating: Float): Review @guard
+    deleteReview(id: ID!): Boolean! @guard
+    rateBook(bookId: ID!, rating: Float!): Review @guard
+}

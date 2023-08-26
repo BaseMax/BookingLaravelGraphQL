@@ -1,0 +1,9 @@
+extend type Query {
+    readingProgress(bookId: ID!): ReadingProgress @guard
+    userReadingProgress: [ReadingProgress!]! @guard
+}
+
+extend type Mutation {
+    updateReadingProgress(bookId: ID!, status: String!): ReadingProgress @guard
+    markBookAsRead(bookId: ID!): ReadingProgress @guard
+}

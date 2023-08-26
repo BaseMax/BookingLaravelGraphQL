@@ -1,0 +1,17 @@
+extend type Query {
+    books: [Book!]! @paginate(defaultCount: 10) @guard
+    book(id: ID! @eq): Book @find @guard
+    searchBooks(title: String! @where(operator: "like")): [Book!]! @paginate(defaultCount: 10) @guard
+    filterBooksByCategory(categoryId: ID! @eq(key: "category_id")): [Book!]! @paginate(defaultCount: 10) @guard
+    topRatedBooks: [Book!]! @guard
+    recentlyAddedBooks: [Book!]! @guard
+    bookDetails(id: ID! @eq): Book @find @guard
+    totalBookCount: Int! @count(model: "Book") @guard
+    bookCountByCategory(categoryId: ID!): Int! @guard
+}
+
+extend type Mutation {
+    addBook(title: String!, authorId: ID!, categoryId: ID!): Book @guard
+    updateBook(id: ID! @whereKey, title: String): Book @update @guard
+    deleteBook(id: ID! @whereKey): Book @delete @guard
+}
